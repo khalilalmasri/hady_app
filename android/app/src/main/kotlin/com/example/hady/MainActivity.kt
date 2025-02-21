@@ -1,4 +1,4 @@
-package com.example.hady
+package com.example.Swedbank
 
 import io.flutter.embedding.android.FlutterActivity
 

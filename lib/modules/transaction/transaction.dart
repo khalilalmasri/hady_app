@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
-
+import '../../core/style.dart';
 import 'widgets/account_info.dart';
 import 'widgets/transaction_nav.dart';
 import 'widgets/transaction_tab.dart';
@@ -35,7 +34,7 @@ class _transactionState extends State<transaction>
           leading: const BackButton(),
           backgroundColor: appbarColor,
           title: Text(
-            'Foretagskonto',
+            'Företagskonto',
             style: TextStyle(color: Colors.grey, fontSize: titleFontSize),
           ),
           flexibleSpace: TransactionsNav(),

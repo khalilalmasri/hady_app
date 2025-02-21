@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
+
+import '../style.dart';
 
 class secontextd extends StatelessWidget {
   String mytext;

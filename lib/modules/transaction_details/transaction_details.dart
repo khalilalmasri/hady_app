@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
-
-import '../approved/approved.dart';
+import '../../core/data.dart';
+import '../../core/style.dart';
 import 'widgets/transaction_nav.dart';
 
 class transactionDetails extends StatefulWidget {
@@ -33,7 +32,7 @@ class _transactionDetailsState extends State<transactionDetails> {
           const SizedBox(height: 30),
           Container(
             alignment: AlignmentDirectional.centerStart,
-            margin: const EdgeInsets.symmetric(horizontal: 10),
+            margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
             child: Text(
               'Details',
               style: TextStyle(
@@ -42,11 +41,19 @@ class _transactionDetailsState extends State<transactionDetails> {
                   fontWeight: FontWeight.bold),
             ),
           ),
-          detaillist(mytitle: 'Transaction date', description: '2025-02-18'),
-          detaillist(mytitle: 'Value date', description: '2025-02-18'),
-          detaillist(mytitle: 'Recipient', description: '8156-944 431 692-2'),
+          detaillist(
+              mytitle: 'Transaction date', description: mydata[0]['date']),
+          detaillist(mytitle: 'Value date', description: mydata[0]['date']),
+          detaillist(mytitle: 'Recipient', description: mydata[0]['account']),
           detaillist(mytitle: 'Bank reference', description: '8689996907533'),
-          detaillist(mytitle: 'Time', description: '20:05'),
+          detaillist(mytitle: 'Time', description: mydata[0]['time']),
+          // detaillist(mytitle: 'Time', description: mydata[0]['id'].toString()),
+          // detaillist(mytitle: 'Transaction date', description: '2025-02-18'),
+          // detaillist(mytitle: 'Value date', description: '2025-02-18'),
+          // detaillist(mytitle: 'Recipient', description: '8156-944 431 692-2'),
+          // detaillist(mytitle: 'Bank reference', description: '8689996907533'),
+          // detaillist(mytitle: 'Time', description: '20:05'),
+          // detaillist(mytitle: 'Time', description: '20:05'),
         ],
       ),
     );

@@ -1,5 +1,7 @@
+import 'package:Swedbank/core/data.dart';
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
+
+import '../../../core/style.dart';
 
 class detailsNav extends StatelessWidget {
   @override
@@ -11,7 +13,7 @@ class detailsNav extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 80),
-          Text('withdrawal',
+          Text('Withdrawal',
               style: TextStyle(fontSize: smallFontSize, color: Colors.grey)),
           Text('Transfer by internet',
               style: TextStyle(
@@ -23,10 +25,10 @@ class detailsNav extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('amount',
+                  Text('Amount',
                       style: TextStyle(
                           fontSize: smallFontSize, color: Colors.grey)),
-                  Text('-5 000,00',
+                  Text('- ${mydata[0]['amount']}',
                       style: TextStyle(
                         fontSize: medFontSize,
                       )),
@@ -39,7 +41,7 @@ class detailsNav extends StatelessWidget {
                   Text('Accounting date',
                       style: TextStyle(
                           fontSize: smallFontSize, color: Colors.grey)),
-                  Text('2025-02-18',
+                  Text(mydata[0]['date'],
                       style: TextStyle(
                         fontSize: medFontSize,
                       )),

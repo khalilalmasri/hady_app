@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
+
+import '../../../core/style.dart';
 
 class underText extends StatelessWidget {
   String mytext;

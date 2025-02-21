@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hady/modules/new_recipient/new_recipient.dart';
+
+import 'modules/new_recipient/new_recipient.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Dark Theme Demo',
+        title: 'Swedbank',
         theme: ThemeData(
           fontFamily: 'SamsungSans',
           brightness: Brightness.dark,

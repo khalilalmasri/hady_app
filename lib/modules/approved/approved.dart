@@ -1,9 +1,9 @@
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
-import 'package:hady/core/widget/second_text.dart';
-
+import '../../core/data.dart';
+import '../../core/style.dart';
+import '../../core/widget/second_text.dart';
 import '../transaction/transaction.dart';
 
 class approved extends StatefulWidget {
@@ -32,11 +32,11 @@ class _approvedState extends State<approved> {
                 children: [
                   Image.asset(
                     'assets/images/app.png',
-                    width: 80,
-                    height: 80,
+                    width: 90,
+                    height: 90,
                   ),
                   const SizedBox(
-                    height: 25,
+                    height: 30,
                   ),
                   Text(
                     'Approved!',
@@ -74,7 +74,7 @@ class _approvedState extends State<approved> {
                 ),
               ),
             ),
-            child: secontextd(mytext: 'Foretagskonto, 8156-744 421 691-1'),
+            child: secontextd(mytext: 'Företagskonto, 8156-744 421 691-1'),
           ),
           Container(
             alignment: AlignmentDirectional.centerStart,
@@ -95,13 +95,18 @@ class _approvedState extends State<approved> {
                   // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Hady Shkeer',
+                    Text('${mydata[0]?['name']}',
                         style: TextStyle(fontSize: medFontSize)),
-                    secontextd(mytext: ' 8156-2,944 431692-2'),
-                    secontextd(mytext: ' Promptly'),
+                    // secontextd(mytext: ' 8156-2,944 431692-2'),
+                    secontextd(
+                      mytext: '${mydata[0]?['account']}',
+                    ),
+                    secontextd(mytext: 'Promptly'),
                   ],
                 ),
-                const Text('5000,00')
+                // const Text('5000,00')
+                Text('- ${mydata[0]?['amount']}',
+                    style: TextStyle(fontSize: medFontSize))
               ],
             ),
           ),
@@ -112,12 +117,13 @@ class _approvedState extends State<approved> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                secontextd(mytext: ' total aproved'),
-                Text('5000,00', style: TextStyle(fontSize: medFontSize))
+                secontextd(mytext: 'Total aproved'),
+                Text('- ${mydata[0]?['amount']},00',
+                    style: TextStyle(fontSize: medFontSize))
               ],
             ),
           ),
-          const SizedBox(height: 280),
+          const SizedBox(height: 230),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             padding: const EdgeInsets.symmetric(horizontal: 10),

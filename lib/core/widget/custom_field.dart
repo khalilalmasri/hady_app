@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
+
+import '../style.dart';
 
 final TextEditingController theController = TextEditingController();
 late String theHint;

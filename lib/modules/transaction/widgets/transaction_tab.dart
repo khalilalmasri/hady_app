@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hady/core/widget/second_text.dart';
-import 'package:hady/modules/approved/approved.dart';
 
+import '../../../core/data.dart';
 import '../../../core/style.dart';
 import '../../../core/logic/date_and_time.dart';
+import '../../../core/widget/second_text.dart';
 import '../../transaction_details/transaction_details.dart';
 
 class TransactionsTab extends StatelessWidget {
@@ -16,7 +16,7 @@ class TransactionsTab extends StatelessWidget {
           const SizedBox(height: 25),
           Container(
             alignment: AlignmentDirectional.centerStart,
-            margin: const EdgeInsets.symmetric(horizontal: 10),
+            margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
             decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -48,20 +48,53 @@ class TransactionsTab extends StatelessWidget {
             ),
             child: secontextd(mytext: getFormattedDate()),
           ),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => transactionDetails(),
+                ),
+              );
+            },
+            child: cardlist(
+              mytitle: mydata[0]['name'] + ' ' + mydata[0]['account'],
+              description: 'Transfer by internet',
+              mydate: mydata[0]['date'],
+              total: '- ${mydata[0]['amount']}',
+              // mytitle: myAlldata[reversedIndex]['name'],
+              // description: myAlldata[reversedIndex]['account'],
+              // mydate: myAlldata[reversedIndex]['time'],
+              // total: myAlldata[reversedIndex]['amount'].toString(),
+            ),
+          ),
           ...List.generate(
-              6,
-              (index) => InkWell(
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => transactionDetails()),
-                    ),
-                    child: cardlist(
-                        mytitle: ' ovf via internet 6541-965465',
-                        description: 'transfer by internet',
-                        mydate: '18-02-2025',
-                        total: '-5 000,00'),
-                  )),
+            myAlldata.length,
+            (index) {
+              // int reversedIndex = myAlldata.length - 1 - index;
+              return InkWell(
+                onTap: () {
+                  // print('myAlldata[index]: ${myAlldata[index]}');
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => transactionDetails(),
+                  //   ),
+                  // );
+                },
+                child: cardlist(
+                  mytitle: myAlldata[index]['name'],
+                  description: myAlldata[index]['desc'],
+                  mydate: myAlldata[index]['date'],
+                  total: myAlldata[index]['amount'].toString(),
+                  // mytitle: myAlldata[reversedIndex]['name'],
+                  // description: myAlldata[reversedIndex]['account'],
+                  // mydate: myAlldata[reversedIndex]['time'],
+                  // total: myAlldata[reversedIndex]['amount'].toString(),
+                ),
+              );
+            },
+          )
         ],
       ),
     );
@@ -101,7 +134,7 @@ class cardlist extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(mytitle, style: TextStyle(fontSize: medFontSize)),
+              Text(mytitle),
               secontextd(mytext: description),
               secontextd(mytext: mydate),
             ],

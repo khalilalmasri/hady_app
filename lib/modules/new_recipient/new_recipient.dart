@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hady/modules/approved/approved.dart';
-import 'package:hady/core/style.dart';
-import 'package:hady/core/widget/custom_field.dart';
 
+import '../../core/data.dart';
 import '../../core/logic/controllers.dart';
+import '../../core/logic/date_and_time.dart';
+import '../../core/style.dart';
+import '../../core/widget/custom_field.dart';
+import '../approved/approved.dart';
 import 'widgets/custom_btn_row.dart';
 import 'widgets/under_text.dart';
 
@@ -54,14 +56,14 @@ class _new_recipientState extends State<new_recipient> {
           const SizedBox(
             height: 10,
           ),
-          theInput(nameController, 'Recipients name', TextInputType.text),
+          theInput(nameController, 'Recipient’s name', TextInputType.text),
           underText(mytext: 'Max 35 characters'),
           const SizedBox(height: 20),
           theInput(sortController, 'Sort code and account number',
-              TextInputType.number),
+              TextInputType.text),
           underText(mytext: '11 - 15 digits'),
           const SizedBox(height: 20),
-          theInput(finalController, ' ', TextInputType.number),
+          theInput(finalController, ' ', TextInputType.text),
           const SizedBox(height: 20),
           // underText(mytext: '$_counter'),
           Container(
@@ -72,6 +74,23 @@ class _new_recipientState extends State<new_recipient> {
                 borderRadius: BorderRadius.circular(30), color: orangeColor),
             child: InkWell(
               onTap: () {
+                fillMydata(
+                  nameController.text,
+                  sortController.text,
+                  finalController.text,
+                  getCurrentDate(),
+                  getCurrentTime(),
+                  // getCurrentTimeInSeconds()
+                );
+                // fillMyalldata(
+                //   nameController.text,
+                //   sortController.text,
+                //   finalController.text,
+                //   getCurrentDate(),
+                //   getCurrentTime(),
+                //   // getCurrentTimeInSeconds()
+                // );
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => approved()),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hady/core/style.dart';
+import '../../../core/style.dart';
 
 class TransactionsNav extends StatelessWidget {
   @override
