@@ -42,7 +42,7 @@ class _approvedState extends State<approved> {
                     'Approved!',
                     style: TextStyle(
                         color: orangeColor,
-                        fontSize: 20,
+                        fontSize: titleFontSize,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -52,19 +52,20 @@ class _approvedState extends State<approved> {
           const SizedBox(height: 25),
           Container(
             alignment: AlignmentDirectional.centerStart,
-            margin: const EdgeInsets.symmetric(horizontal: 10),
+            margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
             child: Text(
               'Payment/transfers',
               style: TextStyle(
                   color: orangeColor,
-                  fontSize: 18,
+                  fontSize: medFontSize,
                   fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 30),
           Container(
             alignment: AlignmentDirectional.centerStart,
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: 10),
             decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -77,7 +78,8 @@ class _approvedState extends State<approved> {
           ),
           Container(
             alignment: AlignmentDirectional.centerStart,
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: 10),
             decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -93,7 +95,8 @@ class _approvedState extends State<approved> {
                   // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Hady Shkeer', style: TextStyle(fontSize: 18)),
+                    Text('Hady Shkeer',
+                        style: TextStyle(fontSize: medFontSize)),
                     secontextd(mytext: ' 8156-2,944 431692-2'),
                     secontextd(mytext: ' Promptly'),
                   ],
@@ -104,12 +107,13 @@ class _approvedState extends State<approved> {
           ),
           Container(
             alignment: AlignmentDirectional.centerStart,
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 secontextd(mytext: ' total aproved'),
-                const Text('5000,00', style: TextStyle(fontSize: 18))
+                Text('5000,00', style: TextStyle(fontSize: medFontSize))
               ],
             ),
           ),
@@ -129,10 +133,10 @@ class _approvedState extends State<approved> {
               },
               child: Container(
                 alignment: AlignmentDirectional.center, //
-                child: const Text(
+                child: Text(
                   'Done',
                   style: TextStyle(
-                      fontSize: 18,
+                      fontSize: medFontSize,
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),

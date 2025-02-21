@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hady/core/style.dart';
 
 class secontextd extends StatelessWidget {
   String mytext;
@@ -8,7 +9,7 @@ class secontextd extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       mytext,
-      style: const TextStyle(fontSize: 14, color: Colors.grey),
+      style: TextStyle(fontSize: smallFontSize, color: Colors.grey),
     );
   }
 }

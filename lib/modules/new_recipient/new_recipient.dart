@@ -42,9 +42,10 @@ class _new_recipientState extends State<new_recipient> {
           Container(
             alignment: AlignmentDirectional.centerStart,
             margin: const EdgeInsets.fromLTRB(10, 20, 10, 10),
-            child: const Text(
+            child: Text(
               'Type of recipient',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: titleFontSize, fontWeight: FontWeight.bold),
             ),
           ),
           custombtnRow(
@@ -90,10 +91,10 @@ class _new_recipientState extends State<new_recipient> {
                     ),
                   ),
                   const SizedBox(width: 10),
-                  const Text(
+                  Text(
                     'Add recipient',
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: medFontSize,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                   ),

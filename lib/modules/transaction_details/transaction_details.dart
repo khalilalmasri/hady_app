@@ -38,7 +38,7 @@ class _transactionDetailsState extends State<transactionDetails> {
               'Details',
               style: TextStyle(
                   color: orangeColor,
-                  fontSize: 18,
+                  fontSize: medFontSize,
                   fontWeight: FontWeight.bold),
             ),
           ),
@@ -63,7 +63,8 @@ class detaillist extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: AlignmentDirectional.centerStart,
-      padding: const EdgeInsets.all(10),
+      padding:
+          EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -71,7 +72,7 @@ class detaillist extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(mytitle, style: TextStyle(fontSize: 18)),
+              Text(mytitle, style: TextStyle(fontSize: medFontSize)),
               const SizedBox(height: 5),
               Text(description,
                   style: const TextStyle(fontSize: 16, color: Colors.grey)),

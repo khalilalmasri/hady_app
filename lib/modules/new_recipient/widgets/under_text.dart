@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hady/core/style.dart';
 
 class underText extends StatelessWidget {
   String mytext;
@@ -11,8 +12,8 @@ class underText extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(25, 0, 0, 0),
       child: Text(
         mytext,
-        style: const TextStyle(
-          fontSize: 14,
+        style: TextStyle(
+          fontSize: smallFontSize,
         ),
       ),
     );

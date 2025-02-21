@@ -29,14 +29,15 @@ class TransactionsTab extends StatelessWidget {
               'Latest transactions',
               style: TextStyle(
                   color: orangeColor,
-                  fontSize: 18,
+                  fontSize: medFontSize,
                   fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 10),
           Container(
             alignment: AlignmentDirectional.centerStart,
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: 10),
             decoration: const BoxDecoration(
               border: Border(
                 bottom: BorderSide(
@@ -83,7 +84,8 @@ class cardlist extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: AlignmentDirectional.centerStart,
-      padding: const EdgeInsets.all(10),
+      padding:
+          EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 10),
       decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(
@@ -99,12 +101,12 @@ class cardlist extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(mytitle, style: TextStyle(fontSize: 18)),
+              Text(mytitle, style: TextStyle(fontSize: medFontSize)),
               secontextd(mytext: description),
               secontextd(mytext: mydate),
             ],
           ),
-          Text(total, style: TextStyle(fontSize: 18))
+          Text(total, style: TextStyle(fontSize: medFontSize))
         ],
       ),
     );

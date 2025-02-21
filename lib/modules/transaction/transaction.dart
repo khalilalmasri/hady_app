@@ -34,9 +34,9 @@ class _transactionState extends State<transaction>
         child: AppBar(
           leading: const BackButton(),
           backgroundColor: appbarColor,
-          title: const Text(
+          title: Text(
             'Foretagskonto',
-            style: TextStyle(color: Colors.grey, fontSize: 20),
+            style: TextStyle(color: Colors.grey, fontSize: titleFontSize),
           ),
           flexibleSpace: TransactionsNav(),
           bottom: TabBar(
